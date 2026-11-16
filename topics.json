@@ -1,0 +1,85 @@
+[
+ {
+  "title": "Linear models for text classification",
+  "key_points": [
+   "Препроцесинг: токенізація, стемінг, стоп-слова",
+   "Словник: мінімальна частота, розмір словника, невідомі токени (<unk>), overfitting і underfitting",
+   "Представлення тексту: one-hot, bag-of-words, n-грами, TF-IDF, feature hashing",
+   "Логістична регресія для класифікації, регуляризація",
+   "Метрики: accuracy, precision, recall, F1, поріг класифікації",
+   "Вплив кількості ознак і довжини n-грам на якість та час навчання"
+  ]
+ },
+ {
+  "title": "Exploring word embeddings",
+  "key_points": [
+   "Щільні вектори слів (GloVe) на відміну від one-hot",
+   "Cosine similarity: що вимірює і як рахується",
+   "Пошук найближчих сусідів: синоніми, антоніми, слова з тією самою роллю",
+   "Візуалізація векторів через зменшення розмірності",
+   "Векторна арифметика й аналогії (king - man + woman)"
+  ]
+ },
+ {
+  "title": "Word embeddings for text classification",
+  "key_points": [
+   "Bag-of-embeddings: усереднення векторів слів документа",
+   "Узгодження токенізації з тією, на якій навчені ембедінги; слова поза словником (OOV)",
+   "Ембедінги проти TF-IDF, особливо коли даних мало",
+   "Embeddings matrix: one-hot × матриця проти пошуку за індексом (nn.Embedding)"
+  ]
+ },
+ {
+  "title": "Neural probabilistic language model",
+  "key_points": [
+   "Мовна модель: ймовірність тексту та передбачення наступного токена",
+   "Архітектура Bengio: embeddings контексту, прихований шар, softmax",
+   "Токенізація: символьна, BPE",
+   "Negative log-likelihood і perplexity (на токен проти на символ)",
+   "Використання мовної моделі для вибору між варіантами тексту",
+   "Обмеження фіксованого вікна контексту; n-грамні моделі"
+  ]
+ },
+ {
+  "title": "Recurrent neural networks",
+  "key_points": [
+   "Прихований стан і рекурентна формула h_t = tanh(W x_t + U h_{t-1} + b)",
+   "Спільні ваги на всіх кроках часу",
+   "Вихід: logits і вибір наступного токена",
+   "Генерація послідовності токен за токеном"
+  ]
+ },
+ {
+  "title": "Text generation",
+  "key_points": [
+   "Два визначення мовної моделі: оцінка ймовірності тексту та розподіл наступного слова",
+   "Токенізація BPE, спеціальні токени (bos, eos)",
+   "Logits, softmax, log-ймовірності",
+   "Авторегресивний цикл генерації та умови зупинки",
+   "Стратегії вибору токена: greedy, sampling, temperature, top-k, top-p (nucleus)",
+   "Prompt і zero-shot класифікація"
+  ]
+ },
+ {
+  "title": "BERT for text classification",
+  "key_points": [
+   "Fine-tuning претренованої моделі та transfer learning при малих даних",
+   "Класифікаційний шар поверх BERT",
+   "Токенізація: truncation, padding",
+   "Гіперпараметри fine-tuning: learning rate, batch size, кількість епох, weight decay",
+   "Метрики якості (accuracy, F1) і вибір найкращої моделі",
+   "BERT проти логістичної регресії: якість, швидкість навчання й передбачення"
+  ]
+ },
+ {
+  "title": "Basic LLM application",
+  "key_points": [
+   "Виклик LLM через API: messages, system prompt",
+   "Prompt engineering: роль, формат виводу",
+   "Prompt injection: відділення даних від інструкцій",
+   "Параметри генерації, зокрема temperature",
+   "API-ключі та змінні середовища",
+   "Обробка помилок при роботі з API"
+  ]
+ }
+]
