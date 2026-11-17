@@ -230,7 +230,14 @@ def respond(user_text, chat, session):
 
 
 def restart_exam():
-    return [{"role": "assistant", "content": GREETING}], None
+    greeting = [
+        {
+            "role": "assistant",
+            "content": GREETING
+        }
+    ]
+
+    return greeting, greeting, greeting, None
 
 
 with gr.Blocks(title="AI Examiner") as demo:
@@ -243,7 +250,7 @@ with gr.Blocks(title="AI Examiner") as demo:
         height=450,
     )
 
-    gr.ChatInterface(
+    chat_interface = gr.ChatInterface(
         fn=respond,
         type="messages",
         chatbot=chatbot,
@@ -255,9 +262,14 @@ with gr.Blocks(title="AI Examiner") as demo:
     restart_btn.click(
         fn=restart_exam,
         inputs=None,
-        outputs=[chatbot, session_state],
+        outputs=[
+            chatbot,
+            chat_interface.chatbot_state,
+            chat_interface.chatbot_value,
+            session_state,
+        ],
     )
-
+    
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 7860))
     demo.launch(server_name="0.0.0.0", server_port=port)
